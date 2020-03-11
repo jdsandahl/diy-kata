@@ -1,4 +1,14 @@
 const humanCatDogYears = number => {
+ return number <= 0 || typeof number !== "number"
+ ? [0,0,0]
+ : number === 1
+ ? [1, 15, 15]
+ : number === 2
+ ? [2, 24, 24]
+ : [number, (24 + 4 * (number - 2)), (24 + 5 * (number - 2))];
+}; 
+ 
+/* 
   const catAge =
     number <= 0 || typeof number !== "number"
       ? 0
@@ -19,6 +29,7 @@ const humanCatDogYears = number => {
 
   return [number, catAge, dogAge];
 };
+*/
 //Solution using standard if statements below
 /*
   let catYears;
