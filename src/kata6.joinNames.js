@@ -1,8 +1,8 @@
 const joinNames = objArray => {
   const names = objArray.map(person => person.name);
+  const startingList = names.slice(0, names.length - 1).join(", ");
 
-  return `${names[0]}, ${names[1]} & ${names[2]}`;
-  //return "Bart, Lisa & Maggie";
+  return `${startingList} & ${names[names.length - 1]}`;
 };
 
 module.exports = joinNames;
