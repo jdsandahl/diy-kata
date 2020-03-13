@@ -30,12 +30,24 @@ describe("joinNames", () => {
     expect(joinNames(objArray3)).toBe("Bart");
   });
 
-  test("returns error when Array is empty, or not an Array", () => {
+  test("returns only named objects", () => {
     const objArray4 = [
+      {name: 'Bart'},
       {},
+      {name: 'Lisa'}
     ];
        
-    expect(joinNames(objArray4)).toBe("Error, no name");
+    expect(joinNames(objArray4)).toBe("Bart & Lisa");
+  });
+
+  test("returns only named objects", () => {
+    const objArray4 = [
+      {},
+      {},
+      {}
+    ];
+       
+    expect(joinNames(objArray4)).toBe("No names have been provided");
   });
 
 
