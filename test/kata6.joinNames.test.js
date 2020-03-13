@@ -30,7 +30,7 @@ describe("joinNames", () => {
     expect(joinNames(objArray3)).toBe("Bart");
   });
 
-  test("returns only named objects", () => {
+  test("Filters out objects without a name and returns only those with a name", () => {
     const objArray4 = [
       {name: 'Bart'},
       {},
@@ -40,7 +40,7 @@ describe("joinNames", () => {
     expect(joinNames(objArray4)).toBe("Bart & Lisa");
   });
 
-  test("returns only named objects", () => {
+  test("When no objects have a name a message is displayed indicating as such", () => {
     const objArray4 = [
       {},
       {},
@@ -50,5 +50,10 @@ describe("joinNames", () => {
     expect(joinNames(objArray4)).toBe("No names have been provided");
   });
 
+  test("Returns an error message if the parameter entered is not an object", () => {
+    const nonArray = "Bart";
+       
+    expect(joinNames(nonArray)).toBe("Error - parameter is not an object");
+  });
 
 });
