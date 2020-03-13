@@ -21,4 +21,22 @@ describe("joinNames", () => {
        
     expect(joinNames(objArray2)).toBe("Bart, Lisa, Maggie & Homer");
   });
+
+  test("returns single name when only one object", () => {
+    const objArray3 = [
+      {name: 'Bart'},
+    ];
+       
+    expect(joinNames(objArray3)).toBe("Bart");
+  });
+
+  test("returns error when Array is empty, or not an Array", () => {
+    const objArray4 = [
+      {},
+    ];
+       
+    expect(joinNames(objArray4)).toBe("Error, no name");
+  });
+
+
 });
