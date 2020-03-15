@@ -9,9 +9,11 @@ const joinNames = objArray => {
     }) //checks that names exist in the array and filters out those with no name
     .map(person => person.name); //adds the names to the names array
 
+  //take away the last name in the list without altering the original array
   const startingList = names.slice(0, names.length - 1).join(", ");
 
-  return names.length > 1
+  //Return if below - then === ?, else/elseIf === : 
+  return names.length > 1  
     ? `${startingList} & ${names[names.length - 1]}`
     : names.length === 1
     ? `${names}`
